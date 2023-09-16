@@ -2,10 +2,12 @@
 
 <!-- Centered Project Logo -->
 <p align="center">
-  <img src="logo.png" alt="CineCam2D Logo" width="200"/>
+  <img src="assets/highres_logo_white.svg" alt="CineCam2D Logo" width="550"/>
 </p>
 
+<p align="center">
 CineCam2D is a 2D camera library for games and other interactive applications built on top of [Bevy](https://bevyengine.org/). Add features like focus, bounding box, panning, shake, and zoom to your Bevy application with ease.
+</p>
 
 <!-- Demo GIF -->
 <p align="center">
@@ -14,11 +16,11 @@ CineCam2D is a 2D camera library for games and other interactive applications bu
 
 ## Features
 
-- **Focus**: Camera focus on a single or multiple entities, with optional smoothing.
-- **Bounding Box** (`bound` feature): Constrain camera within a bounding box.
-- **Panning** (`pan` feature): Manual camera panning.
-- **Zooming** (`zoom` feature): Manual camera zooming.
-- **Shake** (`shake` feature): Camera shake effects using random noise.
+-   **Focus**: Camera focus on a single or multiple entities, with optional smoothing.
+-   **Bounding Box** (`bound` feature): Constrain camera within a bounding box.
+-   **Panning** (`pan` feature): Manual camera panning.
+-   **Zooming** (`zoom` feature): Manual camera zooming.
+-   **Shake** (`shake` feature): Camera shake effects using random noise.
 
 ## Installation
 
@@ -30,6 +32,7 @@ cinecam2d = "0.1.0"
 ```
 
 ## Optional Features
+
 You can optionally include specific features:
 
 ```toml
@@ -38,6 +41,7 @@ cinecam2d = { version = "0.0.1", features = ["bound", "pan", "shake", "zoom"] }
 ```
 
 ## Quickstart
+
 Add `cinecam2d` to your Bevy app:
 
 ```bash
@@ -62,26 +66,37 @@ fn world_setup(commands: Commands) {
 ```
 
 ## Focus Camera on an Entity
+
 ```rs
+
 ```
 
 Focusing on multiple entities work the same way, just add the `FocusTarget` component to each entity.
 
 ## Apply Bounding Box
+
 ```rs
+
 ```
 
 ## Panning
+
 ```rs
+
 ```
 
 ## Zooming
+
 ```rs
+
 ```
 
 ## Shake Camera
+
 ```rs
+
 ```
 
 ## License
+
 This project is under the MIT License - see the LICENSE.md file for details.
