@@ -16,7 +16,7 @@ CineCam2D is a 2D camera library for games and other interactive applications bu
 
 ## Features
 
--   **Focus**: Camera focus on a single or multiple entities, with optional smoothing.
+-   **Focus**: Camera focus/tracking on a single or on multiple entities, with optional smoothing.
 -   **Bounding Box** (`bound` feature): Constrain camera within a bounding box.
 -   **Panning** (`pan` feature): Manual camera panning.
 -   **Zooming** (`zoom` feature): Manual camera zooming.
@@ -55,6 +55,8 @@ use cinecam2d::CineCam2DPlugin;
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
+        // Use this for pixel perfect rendering
+        // .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
         .add_plugins(CineCam2DPlugin)
         .add_systems(Startup, world_setup)
         .run();
@@ -67,6 +69,12 @@ fn world_setup(commands: Commands) {
 
 ## Focus Camera on an Entity
 
+Check the [example](/examples/focus.rs) for more settings.
+
+```bash
+cargo run --example focus
+```
+
 ```rs
 
 ```
@@ -75,11 +83,23 @@ Focusing on multiple entities work the same way, just add the `FocusTarget` comp
 
 ## Apply Bounding Box
 
+Check the [example](/examples/bound.rs) for more settings.
+
+```bash
+cargo run --example bound
+```
+
 ```rs
 
 ```
 
 ## Panning
+
+Check the [example](/examples/pan.rs) for more settings.
+
+```bash
+cargo run --example pan
+```
 
 ```rs
 
@@ -87,11 +107,23 @@ Focusing on multiple entities work the same way, just add the `FocusTarget` comp
 
 ## Zooming
 
+Check the [example](/examples/zoom.rs) for more settings.
+
+```bash
+cargo run --example zoom
+```
+
 ```rs
 
 ```
 
 ## Shake Camera
+
+Check the [example](/examples/shake.rs) for more settings.
+
+```bash
+cargo run --example shake
+```
 
 ```rs
 

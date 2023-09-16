@@ -2,7 +2,7 @@ use bevy::prelude::*;
 
 use super::MainCameraTag;
 
-#[derive(Resource)]
+#[derive(Resource, Default)]
 pub struct CameraFocusConfig {
     /// The offset from the target to focus on
     pub offset: Vec3,
@@ -19,6 +19,7 @@ pub fn focus_target(
     focus_target_query: Query<&Transform, (With<FocusTarget>, Without<MainCameraTag>)>,
     mut camera_query: Query<(&MainCameraTag, &mut Transform)>,
 ) {
+    // TODO: IF THERES NO CONFIG, USE DEFAULT CONFIG
     // If the camera focus config is not provided, early return
     let camera_focus_config = match camera_focus_config {
         Some(config) => config,
