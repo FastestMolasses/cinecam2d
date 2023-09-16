@@ -40,11 +40,13 @@ cinecam2d = { version = "0.0.1", features = ["bound", "pan", "shake", "zoom"] }
 ## Quickstart
 Add `cinecam2d` to your Bevy app:
 
-```rs
-mod character;
+```bash
+cargo run --example basic
+```
 
+```rs
 use bevy::prelude::*;
-use cinecam2d::{focus::FocusTarget, CineCam2DPlugin};
+use cinecam2d::CineCam2DPlugin;
 
 fn main() {
     App::new()
