@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-CineCam2D is a 2D camera library for games and other interactive applications built on top of [Bevy](https://bevyengine.org/). Add features like focus, bounding box, panning, shake, and zoom to your Bevy application with ease.
+CineCam2D is a 2D camera library for games and other interactive applications built on top of <a href="https://bevyengine.org/" target="_blank">Bevy</a>. Add features like focus, bounding box, panning, shake, and zoom to your Bevy application with ease.
 </p>
 
 <!-- Demo GIF -->
