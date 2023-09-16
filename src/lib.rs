@@ -10,8 +10,8 @@ pub mod zoom;
 
 use bevy::prelude::*;
 
-// TODO: PIXEL PERFECT MODE
 // TODO: RETRO PIXEL DOWNSCALE MODE
+// TODO: LOOK AHEAD MODE
 
 pub struct CineCam2DPlugin;
 
