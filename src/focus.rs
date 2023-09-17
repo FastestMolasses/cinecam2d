@@ -19,11 +19,9 @@ pub fn focus_target(
     focus_target_query: Query<&Transform, (With<FocusTarget>, Without<MainCameraTag>)>,
     mut camera_query: Query<(&MainCameraTag, &mut Transform)>,
 ) {
-    // If there's no config, use a default one
-    let camera_focus_config = camera_focus_config.map_or_else(
-        || CameraFocusConfig::default(), // Default if None
-        |res| res.clone()
-    );
+    // Use default config if none is provided
+    let default_config = CameraFocusConfig::default();
+    let camera_focus_config = camera_focus_config.as_deref().unwrap_or(&default_config);
 
     // Get the camera's Transform
     let mut camera_transform = match camera_query.iter_mut().next() {
