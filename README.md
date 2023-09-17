@@ -37,7 +37,7 @@ You can optionally include specific features:
 
 ```toml
 [dependencies]
-cinecam2d = { version = "0.0.1", features = ["bound", "pan", "shake", "zoom"] }
+cinecam2d = { version = "0.1.0", features = ["bound", "pan", "shake", "zoom"] }
 ```
 
 ## Quickstart
@@ -55,7 +55,7 @@ use cinecam2d::CineCam2DPlugin;
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        // Use this for pixel perfect rendering
+        // Use this instead for pixel perfect rendering
         // .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
         .add_plugins(CineCam2DPlugin)
         .add_systems(Startup, world_setup)
