@@ -33,7 +33,7 @@ cinecam2d = "0.1.0"
 
 ## Optional Features
 
-You can optionally include specific features:
+The features in this library are optional, you can enable them by adding the following to your `Cargo.toml`. The `focus` feature is enabled by default.
 
 ```toml
 [dependencies]
