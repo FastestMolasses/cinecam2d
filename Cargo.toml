@@ -15,6 +15,7 @@ keywords = [
     "gamedev",
 ]
 readme = "README.md"
+exclude = ["assets/**/*", ".github/**/*"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -27,3 +28,15 @@ shake = ["dep:noise"]
 zoom = []
 pan = []
 bound = []
+
+[[example]]
+name = "basic"
+path = "examples/basic.rs"
+
+[[example]]
+name = "bound"
+path = "examples/bound.rs"
+
+[[example]]
+name = "focus"
+path = "examples/focus.rs"

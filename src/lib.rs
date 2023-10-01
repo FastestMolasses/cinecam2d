@@ -12,6 +12,7 @@ use bevy::prelude::*;
 
 // TODO: RETRO PIXEL DOWNSCALE MODE
 // TODO: LOOK AHEAD MODE
+// TODO: ADD DEMO TO WEBSITE
 
 pub struct CineCam2DPlugin;
 
@@ -25,7 +26,7 @@ impl Plugin for CineCam2DPlugin {
         #[cfg(feature = "pan")]
         app.add_systems(Update, pan::pan);
 
-        #[cfg(feature = "shake")]
+        #[cfg(feature = "zoom")]
         app.add_systems(Update, zoom::zoom);
 
         #[cfg(feature = "shake")]
