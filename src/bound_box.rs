@@ -35,8 +35,4 @@ pub fn bounding_box(
         .y
         .max(bound_box_config.min.y)
         .min(bound_box_config.max.y);
-    camera_translation.z = camera_translation
-        .z
-        .max(bound_box_config.min.z)
-        .min(bound_box_config.max.z);
 }

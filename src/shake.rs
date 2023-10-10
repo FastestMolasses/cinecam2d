@@ -102,7 +102,7 @@ pub fn apply_shake_2d(mut query: Query<(&mut Transform, &mut CameraShake)>, time
     }
 }
 
-// Struct used ot hold our simplex noise.
+// Struct used to hold our simplex noise.
 // We have to use a seperate struct (rather than implementing `RandomSource` on `OpenSimplex` directly)
 // due to https://doc.rust-lang.org/error_codes/E0117.html
 struct MyNoise {

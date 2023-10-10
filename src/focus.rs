@@ -1,6 +1,5 @@
-use bevy::prelude::*;
-
 use super::MainCameraTag;
+use bevy::prelude::*;
 
 #[derive(Resource, Default, Clone)]
 pub struct CameraFocusConfig {
@@ -8,11 +7,17 @@ pub struct CameraFocusConfig {
     pub offset: Vec3,
     /// The speed at which the camera will move to the target. 0.0 is instant, 1.0 is never
     pub lerp: f32,
+    /// The strategy to use when focusing on multiple targets
+    pub multi_focus_strategy: Option<Box<dyn MultiFocusStrategy>>,
 }
 
 /// The camera will attempt to focus on all entities with this component
 #[derive(Component)]
 pub struct FocusTarget;
+
+pub trait MultiFocusStrategy {
+    fn calculate_focus_position(&self, targets: &[Vec3]) -> Vec3;
+}
 
 pub fn focus_target(
     camera_focus_config: Option<Res<CameraFocusConfig>>,
@@ -45,10 +50,27 @@ pub fn focus_target(
     // Apply the offset to the average target position
     let target_position = average_target_position + camera_focus_config.offset;
 
-    let new_camera_position = camera_transform
+    let mut new_camera_position = camera_transform
         .translation
         .lerp(target_position, 1.0 - camera_focus_config.lerp);
-    camera_transform.translation = new_camera_position;
 
-    // TODO: ADJUST CAMERA ZOOM TO FIT ALL TARGETS
+    // Don't change the camera's Z position
+    new_camera_position.z = camera_transform.translation.z;
+    camera_transform.translation = new_camera_position;
+}
+
+pub struct CenterFocusStrategy;
+impl MultiFocusStrategy for CenterFocusStrategy {
+    fn calculate_focus_position(&self, targets: &[Vec3]) -> Vec3 {
+        // TODO:
+        Vec3::ZERO
+    }
+}
+
+pub struct ZoomOutFocusStrategy;
+impl MultiFocusStrategy for ZoomOutFocusStrategy {
+    fn calculate_focus_position(&self, targets: &[Vec3]) -> Vec3 {
+        // TODO:
+        Vec3::ZERO
+    }
 }
