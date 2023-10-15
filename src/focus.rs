@@ -7,8 +7,8 @@ pub struct CameraFocusConfig {
     pub offset: Vec3,
     /// The speed at which the camera will move to the target. 0.0 is instant, 1.0 is never
     pub lerp: f32,
-    /// The strategy to use when focusing on multiple targets
-    pub multi_focus_strategy: Option<Box<dyn MultiFocusStrategy>>,
+    // The strategy to use when focusing on multiple targets
+    // pub multi_focus_strategy: Option<Box<dyn MultiFocusStrategy>>,
 }
 
 /// The camera will attempt to focus on all entities with this component

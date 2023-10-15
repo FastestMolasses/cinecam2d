@@ -13,6 +13,7 @@ use bevy::prelude::*;
 // TODO: RETRO PIXEL DOWNSCALE MODE
 // TODO: LOOK AHEAD MODE
 // TODO: ADD DEMO TO WEBSITE
+// TODO: UPDATE CAMERA SHAKE LIBRARY
 
 pub struct CineCam2DPlugin;
 
@@ -37,7 +38,7 @@ impl Plugin for CineCam2DPlugin {
 #[derive(Component)]
 pub struct MainCameraTag;
 
-pub fn init(mut commands: Commands, transform: Transform) {
+pub fn init(commands: &mut Commands, transform: Transform) {
     commands.spawn((
         Camera2dBundle {
             transform,

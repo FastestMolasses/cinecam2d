@@ -62,8 +62,8 @@ fn main() {
         .run();
 }
 
-fn world_setup(commands: Commands) {
-    cinecam2d::init(commands, Transform::from_xyz(0.0, 0.0, 10.0));
+fn world_setup(mut commands: Commands) {
+    cinecam2d::init(&mut commands, Transform::from_xyz(0.0, 0.0, 10.0));
 }
 ```
 
