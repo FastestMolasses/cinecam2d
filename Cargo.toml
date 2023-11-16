@@ -20,7 +20,7 @@ exclude = ["assets/**/*", ".github/**/*"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bevy = "0.11.3"
+bevy = "0.12.0"
 noise = { version = "0.8.2", optional = true }
 
 [features]
